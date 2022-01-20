@@ -1,0 +1,20 @@
+<p>registration works!</p>
+<form class="container" [formGroup]='loginForm' (ngSubmit)="login()">
+   <h5 style="text-align:center">registration Form</h5>
+    <div class="form-group" >
+      <label for="exampleInputEmail1">UserId</label>
+      <input type="email" class="form-control"  name="user" formControlName="user">
+      <span style="color:red;" *ngIf="user.invalid && user.touched">please enter valid name</span>
+    </div>
+    <div class="form-group">
+      <!-- <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="pass" formControlName="pass">
+      <span style="color:red;" *ngIf="pass.invalid && pass.touched">please enter valid password</span> -->
+
+      <label for="exampleInputEmail1">Password</label>
+      <input type="password" class="form-control"  name="pass" formControlName="pass">
+      <span style="color:red;" *ngIf="pass.invalid">please enter valid password</span>
+    </div>
+    
+    <button [disabled]="loginForm.invalid" type="login" class="btn btn-primary">SingUp</button>
+  </form>
